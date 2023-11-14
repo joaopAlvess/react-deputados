@@ -2,7 +2,7 @@ import axios from "axios";
 
 
 const apiDeputados = axios.create({
-    baseURL: 'https://dadosabertos.camara.leg.br/api/v2'
+    baseURL: 'http://localhost:3000/',
 })
 
 export default apiDeputados

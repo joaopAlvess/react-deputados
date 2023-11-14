@@ -303,7 +303,7 @@ const Despesas = ({
 };
 
 export async function getServerSideProps(context) {
-  const resultadoDF = await apiDeputados.get("/deputados/?siglaUf=DF");
+  const resultadoDF = await apiDeputados.get("/deputados/uf/DF");
   const deputadosDF = resultadoDF.data.dados;
 
   const deputadosComDespesasDF = await Promise.all(

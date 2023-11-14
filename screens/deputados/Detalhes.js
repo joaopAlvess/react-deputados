@@ -3,6 +3,7 @@ import apiDeputados from '../../service/apiDeputados'
 import { ScrollView, View } from 'react-native'
 import { Card, Text } from 'react-native-paper'
 import { VictoryPolarAxis, VictoryChart, VictoryTooltip, VictoryPie } from 'victory'
+import axios from "axios";
 
 const Detalhes = ({ navigation, route }) => {
 

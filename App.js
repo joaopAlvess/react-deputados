@@ -4,6 +4,7 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import DeputadosStack from "./screens/deputados/DeputadosStack";
 import Despesas from "./screens/despesas/Despesas";
+import Eventos from "./screens/eventos/Eventos";
 
 
 const Tab = createMaterialBottomTabNavigator();
@@ -26,6 +27,15 @@ export default function App() {
             <Tab.Screen
               name="Despesas"
               component={Despesas}
+              options={{
+                tabBarIcon: () => (
+                  <MaterialCommunityIcons name="cash" size={26} />
+                ),
+              }}
+            />
+            <Tab.Screen
+              name="Eventos"
+              component={Eventos}
               options={{
                 tabBarIcon: () => (
                   <MaterialCommunityIcons name="cash" size={26} />
