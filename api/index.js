@@ -41,15 +41,7 @@ app.get('/deputados/:id', function (req, res) {
 
 app.get('/deputados/:id/despesas', function (req, res) {
     res.header("Access-Control-Allow-Origin", "*");
-    axios.get('https://dadosabertos.camara.leg.br/api/v2/deputados/' + req.params.id + '/despesas?itens=100').then(resultado => {
-
-        res.send(resultado.data);
-    })
-})
-
-app.get('/frentes/', function (req, res) {
-    res.header("Access-Control-Allow-Origin", "*");
-    axios.get('https://dadosabertos.camara.leg.br/api/v2/frentes/').then(resultado => {
+    axios.get('https://dadosabertos.camara.leg.br/api/v2/deputados/' + req.params.id + '/despesas?itens=50').then(resultado => {
 
         res.send(resultado.data);
     })
@@ -66,6 +58,14 @@ app.get('/eventos/', function (req, res) {
 app.get('/partidos/', function (req, res) {
     res.header("Access-Control-Allow-Origin", "*");
     axios.get('https://dadosabertos.camara.leg.br/api/v2/partidos/').then(resultado => {
+
+        res.send(resultado.data);
+    })
+})
+
+app.get('/frentes/', function (req, res) {
+    res.header("Access-Control-Allow-Origin", "*");
+    axios.get('https://dadosabertos.camara.leg.br/api/v2/frentes/').then(resultado => {
 
         res.send(resultado.data);
     })

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import apiDeputados from '../../service/apiDeputados'
 import { ScrollView, View } from 'react-native'
-import { Card, Text } from 'react-native-paper'
+import { Card, Divider, Text } from 'react-native-paper'
 import { VictoryPolarAxis, VictoryChart, VictoryTooltip, VictoryPie } from 'victory'
 import axios from "axios";
 
@@ -29,28 +29,31 @@ const Detalhes = ({ navigation, route }) => {
     return (
         <>
             {deputado.id &&
-                <ScrollView style={{ padding: 15 }}>
-                    <Card style={{ marginBottom: 15 }}>
+                <ScrollView>
+                    <Card style={{marginTop: 15, backgroundColor: '#dae8de' }}>
                         <Card.Cover
-                            source={{ uri: deputado.ultimoStatus.urlFoto }}
+                            source={{ uri: deputado.ultimoStatus.urlFoto }} style={{ width: 400, height: 300, padding: 20 }}
                         />
                         <Card.Content>
-                            <Text variant="titleLarge"><center>{deputado.ultimoStatus.nome}</center></Text>
+                            <Text variant="titleLarge" style={{fontSize: 20, margin: 15, textAlign: 'center'}}>{deputado.ultimoStatus.nome}</Text>
                         </Card.Content>
                     </Card>
 
-                    <Text>Informações</Text>
+                    <Text variant='titleLarge' style={{ textAlign: 'center', margin: 15, fontWeight: 'bold', fontSize: 30 }}>Informações</Text>
 
-                    <Card style={{ marginBottom: 15 }} mode='outlined'>
-                        <Card.Content style={{ marginBottom: 15 }} mode='outlined'>
-                            <Text variant="bodyMedium">Email: {deputado.ultimoStatus.gabinete.email}</Text>
-                            <Text variant="bodyMedium">Data de nascimento: {deputado.dataNascimento}</Text>
-                            <Text variant="bodyMedium">Telefone: {deputado.ultimoStatus.gabinete.telefone}</Text>
-                            <Text variant="bodyMedium">Situação: {deputado.ultimoStatus.situacao}</Text>
+                    <Card style={{margin: 15 }} mode='outlined'>
+                        <Card.Content style={{ marginBottom: 15, backgroundColor: '#dae8de' }} mode='outlined'>
+                            <Text style={{ fontSize: 15, fontWeight: 'bold' }}>Email: {deputado.ultimoStatus.gabinete.email}</Text>
+                            <Divider/>
+                            <Text style={{ fontSize: 15, fontWeight: 'bold' }}>Data de nascimento: {deputado.dataNascimento}</Text>
+                            <Divider/>
+                            <Text style={{ fontSize: 15, fontWeight: 'bold' }}>Telefone: {deputado.ultimoStatus.gabinete.telefone}</Text>
+                            <Divider/>
+                            <Text style={{ fontSize: 15, fontWeight: 'bold' }}>Situação: {deputado.ultimoStatus.situacao}</Text>
                         </Card.Content>
                     </Card>
 
-                    <Text>Gastos dos Deputados</Text>
+                    <Text variant='titleLarge' style={{ textAlign: 'center', margin: 15, fontWeight: 'bold', fontSize: 30 }}>Gastos do Deputado</Text>
 
                     <View>
                         <VictoryPie

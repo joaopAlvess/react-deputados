@@ -18,8 +18,8 @@ const Eventos = ({ navigation }) => {
                 {eventos.map((item) => (
                     <Card mode='outlined' key={item.id}
                         //onPress={() => navigation.push('detalhes', { id: item.id })}
-                        style={{ margin: 15, backgroundColor: '#dae8de'}}>
-                        <Card.Content style={{ margin: 15 }}>
+                        style={{ margin: 15 }}>
+                        <Card.Content style={{ margin: 15, backgroundColor: '#dae8de', borderRadius: 8 }}>
                             <Text variant="titleLarge" style={{ padding: 15 }}>Nº: {item.id}</Text>
                             <Divider />
                             <Text style={{ fontSize: 15, fontWeight: 'bold', padding: 7 }}>Descrição: {item.descricaoTipo}</Text>

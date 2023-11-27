@@ -3,13 +3,10 @@ import { PaperProvider } from "react-native-paper";
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import DeputadosStack from "./screens/deputados/DeputadosStack";
-import Despesas from "./screens/despesas/Despesas";
-import Eventos from "./screens/eventos/Eventos";
-import Frentes from "./screens/frentes/Frentes";
-import FrentesStack from "./screens/frentes/FrentesStack";
 import PartidosStack from "./screens/partidos/PartidosStack";
 import OrgasoStack from "./screens/orgaos/OrgaosStack";
 import EventosStack from "./screens/eventos/EventosStack";
+import FrentesStack from "./screens/frentes/FrentesStack";
 
 
 const Tab = createMaterialBottomTabNavigator();
@@ -32,26 +29,8 @@ export default function App() {
               }}
             />
             <Tab.Screen
-              name="Despesas"
-              component={Despesas}
-              options={{
-                tabBarIcon: () => (
-                  <MaterialCommunityIcons name="cash" size={26} />
-                ),
-              }}
-            />
-            <Tab.Screen
               name="Eventos"
               component={EventosStack}
-              options={{
-                tabBarIcon: () => (
-                  <MaterialCommunityIcons name="cash" size={26} />
-                ),
-              }}
-            />
-            <Tab.Screen
-              name="Frentes"
-              component={FrentesStack}
               options={{
                 tabBarIcon: () => (
                   <MaterialCommunityIcons name="cash" size={26} />
@@ -70,6 +49,15 @@ export default function App() {
             <Tab.Screen
               name="Orgãos"
               component={OrgasoStack}
+              options={{
+                tabBarIcon: () => (
+                  <MaterialCommunityIcons name="cash" size={26} />
+                ),
+              }}
+            />
+            <Tab.Screen
+              name="Frentes"
+              component={FrentesStack}
               options={{
                 tabBarIcon: () => (
                   <MaterialCommunityIcons name="cash" size={26} />

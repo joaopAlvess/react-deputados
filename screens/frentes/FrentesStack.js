@@ -1,9 +1,10 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Partidos from './Principal';
+import Partidos from './Frentes';
+import Frentes from './Frentes';
 
 const Stack = createNativeStackNavigator();
 
-const PartidosStack = () => {
+const FrentesStack = () => {
   return (
     <>
     <Stack.Navigator
@@ -13,10 +14,10 @@ const PartidosStack = () => {
         backgroundColor: '#3c8f51'
       }
     }}>
-        <Stack.Screen name="partidos" component={Partidos} options={{ title: 'Partidos' }} /> 
+        <Stack.Screen name="frentes" component={Frentes} options={{ title: 'Frentes' }} /> 
     </Stack.Navigator>
 </>
   )
 }
 
-export default PartidosStack
+export default FrentesStack

@@ -24,7 +24,7 @@ const Partidos = ({ navigation }) => {
                 {partidos.map((item) => (
                     <Card mode='outlined' key={item.id}
                         style={{ margin: 15 }}>
-                        <Card.Content style={{ margin: 15, backgroundColor: '#dae8de' }}>
+                        <Card.Content style={{ margin: 15, backgroundColor: '#dae8de', borderRadius: 8 }}>
                             <Text variant="titleLarge" style={{ padding: 15 }}>Nº: {item.id}</Text>
                             <Divider />
                             <Text style={{ fontSize: 15, fontWeight: 'bold', padding: 7 }}>Nome: {item.nome}</Text>
