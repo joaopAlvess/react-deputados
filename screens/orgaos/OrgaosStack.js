@@ -6,7 +6,13 @@ const Stack = createNativeStackNavigator();
 const OrgasoStack = () => {
   return (
     <>
-    <Stack.Navigator>
+    <Stack.Navigator
+    screenOptions={{
+      headerTitleAlign: 'center',
+      headerStyle: {
+        backgroundColor: '#3c8f51'
+      }
+    }}>
         <Stack.Screen name="orgaos" component={Orgaos} options={{ title: 'Orgãos' }} /> 
     </Stack.Navigator>
 </>
