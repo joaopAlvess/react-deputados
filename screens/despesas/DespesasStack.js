@@ -7,7 +7,13 @@ const Stack = createNativeStackNavigator();
 const DespesasStack = () => {
   return (
     <>
-    <Stack.Navigator>
+    <Stack.Navigator
+    screenOptions={{
+      headerTitleAlign: 'center',
+      headerStyle: {
+        backgroundColor: '#3c8f51'
+      }
+    }}>
         <Stack.Screen name="despesas" component={Despesas} options={{ title: 'Despesas' }} />              
     </Stack.Navigator>
 </>

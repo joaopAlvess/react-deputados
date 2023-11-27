@@ -9,7 +9,7 @@ const Detalhes = ({ navigation, route }) => {
 
     const [deputado, setDeputado] = useState({})
     const [gastos, setGastos] = useState([])
-
+    const [despesas, setDespesas] = useState([]);
 
     useEffect(() => {
         const id = route.params.id

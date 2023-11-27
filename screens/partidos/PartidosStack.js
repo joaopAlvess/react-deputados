@@ -1,11 +1,9 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import React from 'react'
-import Eventos from './Eventos';
-
+import Partidos from './Partidos';
 
 const Stack = createNativeStackNavigator();
 
-const EventosStack = () => {
+const PartidosStack = () => {
   return (
     <>
     <Stack.Navigator
@@ -15,10 +13,10 @@ const EventosStack = () => {
         backgroundColor: '#3c8f51'
       }
     }}>
-        <Stack.Screen name="eventos" component={Eventos} options={{ title: 'Eventos' }} />              
+        <Stack.Screen name="partidos" component={Partidos} options={{ title: 'Partidos' }} /> 
     </Stack.Navigator>
 </>
   )
 }
 
-export default EventosStack
+export default PartidosStack

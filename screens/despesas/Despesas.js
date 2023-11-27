@@ -117,186 +117,186 @@ const Despesas = ({
   return (
     <>
       <View>
-        
-         <Text>Despesas dos deputados do Centro-Oeste no ano de 2023</Text>       
-          <canvas id="lineChart"></canvas>
-            <Text>Selecione o Mês:</Text>
-            <TextInput type="month" value={mesAno} onChange={handleMesAnoChange} />
-          
-          <Text>
-            <strong>Soma total das despesas dos deputados do DF: </strong>
-            {new Intl.NumberFormat("pt-BR", {
-              style: "currency",
-              currency: "BRL",
-            }).format(somaTotalDespesasDF)}
-          </Text>
-          
-            {filtrarDeputadosDespesasAltas(deputadosDF.deputados).map(
-              (item) => (
-                
-                  <Card>
-                    <Card.Header>
-                      <Image
-                        variant="top"
-                        className={styles.photo}
-                        src={item.urlFoto}
-                      />
-                    </Card.Header>
-                    <Card.Body>
-                      <Card.Title>
-                        <strong>{item.nome}</strong>
-                      </Card.Title>
-                      
-                        <strong>Partido: </strong>
-                        {item.siglaPartido}
-                      
-                      
-                        <strong>UF: </strong>
-                        {item.siglaUf}
-                      
-                        <strong>
-                          Total de despesas no período selecionado:{" "}
-                        </strong>
-                        {item.totalDespesasFiltradas?.toLocaleString("pt-BR", {
-                          style: "currency",
-                          currency: "BRL",
-                        })}
-                    </Card.Body>
-                  </Card>
-              )
-            )}
 
-          <Text>
-            <strong>Soma total das despesas dos deputados de Goiás: </strong>
-            {new Intl.NumberFormat("pt-BR", {
-              style: "currency",
-              currency: "BRL",
-            }).format(somaTotalDespesasGO)}
-          </Text>
-          
-            {filtrarDeputadosDespesasAltas(deputadosGO).map((item) => (
-              
-                <Card>
-                  <Card.Header>
-                    <Image
-                      variant="top"
-                      className={styles.photo}
-                      src={item.urlFoto}
-                    />
-                  </Card.Header>
-                  <Card.Body>
-                    <Card.Title>
-                      <strong>{item.nome}</strong>
-                    </Card.Title>
-                    
-                      <strong>Partido: </strong>
-                      {item.siglaPartido}
-                    
-                    
-                      <strong>UF: </strong>
-                      {item.siglaUf}
-                    
-                      <strong>
-                        Total de despesas no período selecionado:{" "}
-                      </strong>
-                      {item.totalDespesasFiltradas?.toLocaleString("pt-BR", {
-                        style: "currency",
-                        currency: "BRL",
-                      })}
-                  </Card.Body>
-                </Card>
-              
-            ))}
-          
+        <Text>Despesas dos deputados do Centro-Oeste no ano de 2023</Text>
+        <canvas id="lineChart"></canvas>
+        <Text>Selecione o Mês:</Text>
+        <TextInput type="month" value={mesAno} onChange={handleMesAnoChange} />
 
-          <Text>
-            <strong>
-              Soma total das despesas dos deputados do Mato Grosso:{" "}
-            </strong>
-            {new Intl.NumberFormat("pt-BR", {
-              style: "currency",
-              currency: "BRL",
-            }).format(somaTotalDespesasMT)}
-          </Text>
-          
-            {filtrarDeputadosDespesasAltas(deputadosMT).map((item) => (
-              
-                <Card >
-                  <Card.Header>
-                    <Image
-                      variant="top"
-                      className={styles.photo}
-                      src={item.urlFoto}
-                    />
-                  </Card.Header>
-                  <Card.Body>
-                    <Card.Title>
-                      <strong>{item.nome}</strong>
-                    </Card.Title>
-                   
-                      <strong>Partido: </strong>
-                      {item.siglaPartido}
-                   
-                      <strong>UF: </strong>
-                      {item.siglaUf}
-                   
-                      <strong>
-                        Total de despesas no período selecionado:{" "}
-                      </strong>
-                      {item.totalDespesasFiltradas?.toLocaleString("pt-BR", {
-                        style: "currency",
-                        currency: "BRL",
-                      })}
-                  </Card.Body>
-                </Card>
-              
-            ))}
-         
+        <Text>
+          <strong>Soma total das despesas dos deputados do DF: </strong>
+          {new Intl.NumberFormat("pt-BR", {
+            style: "currency",
+            currency: "BRL",
+          }).format(somaTotalDespesasDF)}
+        </Text>
 
-          <Text>
-            <strong>
-              Soma total das despesas dos deputados de Mato Grosso do Sul:{" "}
-            </strong>
-            {new Intl.NumberFormat("pt-BR", {
-              style: "currency",
-              currency: "BRL",
-            }).format(somaTotalDespesasMS)}
-          </Text>
-          
-            {filtrarDeputadosDespesasAltas(deputadosMS).map((item) => (
-           
-                <Card >
-                  <Card.Header>
-                    <Image
-                      variant="top"
-                      className={styles.photo}
-                      src={item.urlFoto}
-                    />
-                  </Card.Header>
-                  <Card.Body>
-                    <Card.Title >
-                      <strong>{item.nome}</strong>
-                    </Card.Title>
-                  
-                      <strong>Partido: </strong>
-                      {item.siglaPartido}
-                    
-                      <strong>UF: </strong>
-                      {item.siglaUf}
-                    
-                      <strong>
-                        Total de despesas no período selecionado:{" "}
-                      </strong>
-                      {item.totalDespesasFiltradas?.toLocaleString("pt-BR", {
-                        style: "currency",
-                        currency: "BRL",
-                      })}
-                  </Card.Body>
-                </Card>
-              
-            ))}
-          
-        
+        {filtrarDeputadosDespesasAltas(deputadosDF.deputados).map(
+          (item) => (
+
+            <Card>
+              <Card.Header>
+                <Image
+                  variant="top"
+                  className={styles.photo}
+                  src={item.urlFoto}
+                />
+              </Card.Header>
+              <Card.Body>
+                <Card.Title>
+                  <strong>{item.nome}</strong>
+                </Card.Title>
+
+                <strong>Partido: </strong>
+                {item.siglaPartido}
+
+
+                <strong>UF: </strong>
+                {item.siglaUf}
+
+                <strong>
+                  Total de despesas no período selecionado:{" "}
+                </strong>
+                {item.totalDespesasFiltradas?.toLocaleString("pt-BR", {
+                  style: "currency",
+                  currency: "BRL",
+                })}
+              </Card.Body>
+            </Card>
+          )
+        )}
+
+        <Text>
+          <strong>Soma total das despesas dos deputados de Goiás: </strong>
+          {new Intl.NumberFormat("pt-BR", {
+            style: "currency",
+            currency: "BRL",
+          }).format(somaTotalDespesasGO)}
+        </Text>
+
+        {filtrarDeputadosDespesasAltas(deputadosGO).map((item) => (
+
+          <Card>
+            <Card.Header>
+              <Image
+                variant="top"
+                className={styles.photo}
+                src={item.urlFoto}
+              />
+            </Card.Header>
+            <Card.Body>
+              <Card.Title>
+                <strong>{item.nome}</strong>
+              </Card.Title>
+
+              <strong>Partido: </strong>
+              {item.siglaPartido}
+
+
+              <strong>UF: </strong>
+              {item.siglaUf}
+
+              <strong>
+                Total de despesas no período selecionado:{" "}
+              </strong>
+              {item.totalDespesasFiltradas?.toLocaleString("pt-BR", {
+                style: "currency",
+                currency: "BRL",
+              })}
+            </Card.Body>
+          </Card>
+
+        ))}
+
+
+        <Text>
+          <strong>
+            Soma total das despesas dos deputados do Mato Grosso:{" "}
+          </strong>
+          {new Intl.NumberFormat("pt-BR", {
+            style: "currency",
+            currency: "BRL",
+          }).format(somaTotalDespesasMT)}
+        </Text>
+
+        {filtrarDeputadosDespesasAltas(deputadosMT).map((item) => (
+
+          <Card >
+            <Card.Header>
+              <Image
+                variant="top"
+                className={styles.photo}
+                src={item.urlFoto}
+              />
+            </Card.Header>
+            <Card.Body>
+              <Card.Title>
+                <strong>{item.nome}</strong>
+              </Card.Title>
+
+              <strong>Partido: </strong>
+              {item.siglaPartido}
+
+              <strong>UF: </strong>
+              {item.siglaUf}
+
+              <strong>
+                Total de despesas no período selecionado:{" "}
+              </strong>
+              {item.totalDespesasFiltradas?.toLocaleString("pt-BR", {
+                style: "currency",
+                currency: "BRL",
+              })}
+            </Card.Body>
+          </Card>
+
+        ))}
+
+
+        <Text>
+          <strong>
+            Soma total das despesas dos deputados de Mato Grosso do Sul:{" "}
+          </strong>
+          {new Intl.NumberFormat("pt-BR", {
+            style: "currency",
+            currency: "BRL",
+          }).format(somaTotalDespesasMS)}
+        </Text>
+
+        {filtrarDeputadosDespesasAltas(deputadosMS).map((item) => (
+
+          <Card >
+            <Card.Header>
+              <Image
+                variant="top"
+                className={styles.photo}
+                src={item.urlFoto}
+              />
+            </Card.Header>
+            <Card.Body>
+              <Card.Title >
+                <strong>{item.nome}</strong>
+              </Card.Title>
+
+              <strong>Partido: </strong>
+              {item.siglaPartido}
+
+              <strong>UF: </strong>
+              {item.siglaUf}
+
+              <strong>
+                Total de despesas no período selecionado:{" "}
+              </strong>
+              {item.totalDespesasFiltradas?.toLocaleString("pt-BR", {
+                style: "currency",
+                currency: "BRL",
+              })}
+            </Card.Body>
+          </Card>
+
+        ))}
+
+
       </View>
     </>
   );

@@ -47,9 +47,33 @@ app.get('/deputados/:id/despesas', function (req, res) {
     })
 })
 
+app.get('/frentes/', function (req, res) {
+    res.header("Access-Control-Allow-Origin", "*");
+    axios.get('https://dadosabertos.camara.leg.br/api/v2/frentes/').then(resultado => {
+
+        res.send(resultado.data);
+    })
+})
+
 app.get('/eventos/', function (req, res) {
     res.header("Access-Control-Allow-Origin", "*");
     axios.get('https://dadosabertos.camara.leg.br/api/v2/eventos/').then(resultado => {
+
+        res.send(resultado.data);
+    })
+})
+
+app.get('/partidos/', function (req, res) {
+    res.header("Access-Control-Allow-Origin", "*");
+    axios.get('https://dadosabertos.camara.leg.br/api/v2/partidos/').then(resultado => {
+
+        res.send(resultado.data);
+    })
+})
+
+app.get('/orgaos/', function (req, res) {
+    res.header("Access-Control-Allow-Origin", "*");
+    axios.get('https://dadosabertos.camara.leg.br/api/v2/orgaos/').then(resultado => {
 
         res.send(resultado.data);
     })
